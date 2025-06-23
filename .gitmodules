@@ -1,0 +1,3 @@
+[submodule "Assets/Utilities"]
+	path = Assets/Utilities
+	url = https://github.com/lukebake9010/UnityUtilities
