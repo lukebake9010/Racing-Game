@@ -6,11 +6,20 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     /// <summary>
+    /// The loading menu to activate on play
+    /// </summary>
+    [SerializeField]
+    private LoadingMenu sceneLoadingMenu;
+
+    /// <summary>
     /// Function for Logic for the "Play" button.
     /// </summary>
     public void OnPlayButton()
     {
-
+        if(sceneLoadingMenu != null)
+        {
+            sceneLoadingMenu.ShowAndLoadScene(1);//Show loading menu and load testscene
+        }
     }
 
     /// <summary>
