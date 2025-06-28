@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8339283536183646678}
   - component: {fileID: 8360977192174228523}
   - component: {fileID: 1265942309176860639}
-  m_Layer: 0
+  - component: {fileID: 6668490999664641061}
+  - component: {fileID: 7475075711382348021}
+  m_Layer: 6
   m_Name: Test Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,3 +102,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e140338c7ac34442a08bc7dfef59fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6668490999664641061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996605000737492107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d153376978f49244fa77866daeb30da3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2D: {fileID: 7475075711382348021}
+--- !u!50 &7475075711382348021
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996605000737492107}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
