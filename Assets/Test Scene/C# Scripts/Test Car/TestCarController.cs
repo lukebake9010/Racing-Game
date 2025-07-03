@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-
 using TestCarIAC = RacingGame.TestCar.TestCarInputActionsCollection;
 
 namespace RacingGame.TestCar
@@ -11,6 +10,8 @@ namespace RacingGame.TestCar
     {
         [SerializeField]
         private Rigidbody2D rb2D;
+
+        #region Update
 
         private void FixedUpdate()
         {
@@ -32,6 +33,8 @@ namespace RacingGame.TestCar
             HandleUserInput();
             CalculateCarPhysics();
         }
+
+        #endregion
 
 
         #region User Input
@@ -83,9 +86,39 @@ namespace RacingGame.TestCar
 
             CalculateSteering();
 
-            KillOrthogonalVelocity();
+            KillDrifting();
         }
 
+        /// <summary>
+        /// The speed required for the car to be considered 'Driving'
+        /// </summary>
+        const float drivingThreshold = 1f;
+
+        /// <summary>
+        /// Is the car driving? (Moving at speed greater than <see cref="drivingThreshold"/>)
+        /// </summary>
+        public bool IsDriving
+        {
+            get
+            {
+                return Mathf.Abs(rb2D.linearVelocity.magnitude) > drivingThreshold;
+            }
+        }
+
+        /// <summary>
+        /// The speed of the car
+        /// </summary>
+        public float DrivingSpeed
+        {
+            get
+            {
+                return rb2D.linearVelocity.magnitude;
+            }
+        }
+
+        /// <summary>
+        /// Calculates the forward force applied to the car
+        /// </summary>
         private void CalculateAcceleration()
         {
             float currentSpeed = Vector2.Dot(rb2D.linearVelocity, transform.up);
@@ -95,6 +128,9 @@ namespace RacingGame.TestCar
             rb2D.AddForce(force, ForceMode2D.Force);
         }
 
+        /// <summary>
+        /// Calculates the rotation applied to the car
+        /// </summary>
         private void CalculateSteering()
         {
             float speedFactor = rb2D.linearVelocity.magnitude / maxSpeed;
@@ -102,17 +138,49 @@ namespace RacingGame.TestCar
             rb2D.MoveRotation(rb2D.rotation - rotationAmount * Time.fixedDeltaTime);
         }
 
-        void KillOrthogonalVelocity()
+
+        private const float driftThreshold = 1f;
+
+        private bool isDrifting = false;
+        public bool IsDrifting
         {
-            Vector2 forward = transform.up * Vector2.Dot(rb2D.linearVelocity, transform.up);
-            Vector2 sideways = transform.right * Vector2.Dot(rb2D.linearVelocity, transform.right);
-            rb2D.linearVelocity = forward + sideways * driftFactor;
+            get
+            {
+                return isDrifting;
+            }
+            private set
+            {
+                if (isDrifting != value)
+                {
+                    isDrifting = value;
+                }
+            }
         }
 
-
-        private void HandleRigidbodyForces()
+        private float driftMagnitude = 0f;
+        public float DriftMagnitude
         {
+            get 
+            { 
+                return driftMagnitude; 
+            }
+            private set
+            {
+                driftMagnitude = value;
+            }
+        }
 
+        /// <summary>
+        /// Stops sideways forces to avoid drifting. Alter <see cref="driftFactor"/> to change the amount of drifting
+        /// </summary>
+        void KillDrifting()
+        {
+            Vector2 forward = transform.up * Vector2.Dot(rb2D.linearVelocity, transform.up);
+            float driftAmount = Vector2.Dot(rb2D.linearVelocity, transform.right);
+            DriftMagnitude = Mathf.Abs(driftAmount);
+            IsDrifting = DriftMagnitude > driftThreshold;
+            Vector2 sideways = transform.right * driftAmount;
+            rb2D.linearVelocity = forward + sideways * driftFactor;
         }
 
         #endregion
