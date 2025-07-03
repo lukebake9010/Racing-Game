@@ -8,6 +8,9 @@ namespace RacingGame.TestCar
     [RequireComponent(typeof(Rigidbody2D))]
     public class TestCarController : MonoBehaviour
     {
+        /// <summary>
+        /// The cars rigidbody
+        /// </summary>
         [SerializeField]
         private Rigidbody2D rb2D;
 
@@ -74,12 +77,24 @@ namespace RacingGame.TestCar
         /// </summary>
         [SerializeField] float accelerationMultiplier = 1f; //This should be better named
 
+        /// <summary>
+        /// The max speed of the car before no more force is applied
+        /// </summary>
         [SerializeField] float maxSpeed = 20f;
 
+        /// <summary>
+        /// The amount of force applied for turning
+        /// </summary>
         [SerializeField] float steeringMultiplier = 200f;
 
+        /// <summary>
+        /// The amount of motion lost by turning/drifting
+        /// </summary>
         [SerializeField] float driftFactor = 0.95f;
 
+        /// <summary>
+        /// Runs the car physics loop
+        /// </summary>
         private void CalculateCarPhysics()
         {
             CalculateAcceleration();
@@ -138,10 +153,18 @@ namespace RacingGame.TestCar
             rb2D.MoveRotation(rb2D.rotation - rotationAmount * Time.fixedDeltaTime);
         }
 
-
+        /// <summary>
+        /// The amount of horizontal velocity necessary to be 'Drifting'
+        /// </summary>
         private const float driftThreshold = 1f;
 
+        /// <summary>
+        /// Is the car drifting?
+        /// </summary>
         private bool isDrifting = false;
+        /// <summary>
+        /// Is the car drifting?
+        /// </summary>
         public bool IsDrifting
         {
             get
@@ -157,7 +180,13 @@ namespace RacingGame.TestCar
             }
         }
 
+        /// <summary>
+        /// The amount the car is drifting
+        /// </summary>
         private float driftMagnitude = 0f;
+        /// <summary>
+        /// The amount the car is drifting
+        /// </summary>
         public float DriftMagnitude
         {
             get 
@@ -171,7 +200,7 @@ namespace RacingGame.TestCar
         }
 
         /// <summary>
-        /// Stops sideways forces to avoid drifting. Alter <see cref="driftFactor"/> to change the amount of drifting
+        /// Stops sideways forces to facilitate realistic drifting and turning. Alter <see cref="driftFactor"/> to change the amount of drifting.
         /// </summary>
         void KillDrifting()
         {
