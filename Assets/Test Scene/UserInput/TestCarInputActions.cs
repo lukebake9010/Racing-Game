@@ -128,6 +128,15 @@ namespace RacingGame.TestCar
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e1a9fbd-3f0a-46bf-8196-5dd27521cd3e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -350,6 +359,17 @@ namespace RacingGame.TestCar
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bcb75502-73f0-40a8-af58-cba5f1eb4fa3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -423,6 +443,7 @@ namespace RacingGame.TestCar
             m_TestCar_Look = m_TestCar.FindAction("Look", throwIfNotFound: true);
             m_TestCar_Interact = m_TestCar.FindAction("Interact", throwIfNotFound: true);
             m_TestCar_Sprint = m_TestCar.FindAction("Sprint", throwIfNotFound: true);
+            m_TestCar_Menu = m_TestCar.FindAction("Menu", throwIfNotFound: true);
         }
 
         ~@TestCarInputActions()
@@ -507,6 +528,7 @@ namespace RacingGame.TestCar
         private readonly InputAction m_TestCar_Look;
         private readonly InputAction m_TestCar_Interact;
         private readonly InputAction m_TestCar_Sprint;
+        private readonly InputAction m_TestCar_Menu;
         /// <summary>
         /// Provides access to input actions defined in input action map "Test Car".
         /// </summary>
@@ -534,6 +556,10 @@ namespace RacingGame.TestCar
             /// Provides access to the underlying input action "TestCar/Sprint".
             /// </summary>
             public InputAction @Sprint => m_Wrapper.m_TestCar_Sprint;
+            /// <summary>
+            /// Provides access to the underlying input action "TestCar/Menu".
+            /// </summary>
+            public InputAction @Menu => m_Wrapper.m_TestCar_Menu;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -572,6 +598,9 @@ namespace RacingGame.TestCar
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
 
             /// <summary>
@@ -595,6 +624,9 @@ namespace RacingGame.TestCar
                 @Sprint.started -= instance.OnSprint;
                 @Sprint.performed -= instance.OnSprint;
                 @Sprint.canceled -= instance.OnSprint;
+                @Menu.started -= instance.OnMenu;
+                @Menu.performed -= instance.OnMenu;
+                @Menu.canceled -= instance.OnMenu;
             }
 
             /// <summary>
@@ -728,6 +760,13 @@ namespace RacingGame.TestCar
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSprint(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Menu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMenu(InputAction.CallbackContext context);
         }
     }
 }

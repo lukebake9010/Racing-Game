@@ -19,6 +19,7 @@ namespace RacingGame.TestCar
 
         #region Player Inputs
         public static InputAction Move => TestCarActions.Move;
+        public static InputAction Menu => TestCarActions.Menu;
 
         #endregion
     }
