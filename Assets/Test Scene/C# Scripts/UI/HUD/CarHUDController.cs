@@ -2,31 +2,34 @@ using RacingGame.TestCar;
 using TMPro;
 using UnityEngine;
 
-public class CarHUDController : MonoBehaviour
+namespace RacingGame.TestCar
 {
-    [SerializeField]
-    private TestCarController carController;
-
-    [Header("Speedometer")]
-    [SerializeField]
-    private TextMeshProUGUI speedometerText;
-    [SerializeField]
-    private float unitsToMPHMultiplier = 20f;
-
-    void Update()
+    public class CarHUDController : MonoBehaviour
     {
-        UpdateSpeedometer();
-    }
+        [SerializeField]
+        private TestCarController carController;
 
-    private void UpdateSpeedometer()
-    {
-        if (carController == null)
+        [Header("Speedometer")]
+        [SerializeField]
+        private TextMeshProUGUI speedometerText;
+        [SerializeField]
+        private float unitsToMPHMultiplier = 10f;
+
+        void Update()
         {
-            Debug.LogError("No car controller supplied to CarHudController");
+            UpdateSpeedometer();
         }
-        if (speedometerText == null) return;
 
-        int speedometerReading = (int)(carController.DrivingSpeed * unitsToMPHMultiplier);
-        speedometerText.text = speedometerReading.ToString();
+        private void UpdateSpeedometer()
+        {
+            if (carController == null)
+            {
+                Debug.LogError("No car controller supplied to CarHudController");
+            }
+            if (speedometerText == null) return;
+
+            int speedometerReading = (int)(carController.DrivingSpeed * unitsToMPHMultiplier);
+            speedometerText.text = speedometerReading.ToString();
+        }
     }
 }
