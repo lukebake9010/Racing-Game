@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Basic Manager class containing functions for the main menu buttons.
@@ -18,7 +19,12 @@ public class MainMenuManager : MonoBehaviour
     {
         if(sceneLoadingMenu != null)
         {
-            sceneLoadingMenu.ShowAndLoadScene(1);//Show loading menu and load testscene
+            int testSceneID = Utilities.SceneManagement.SceneUtils.GetSceneBuildIndexByName("TestScene");
+            if (testSceneID != -1)
+            {
+                sceneLoadingMenu.ShowAndLoadScene(testSceneID);//Show loading menu and load testscene
+            }
+            
         }
     }
 
