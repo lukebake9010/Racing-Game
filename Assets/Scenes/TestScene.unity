@@ -544,12 +544,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Container: {fileID: 1537227100}
-  m_TargetMesh: {fileID: 0}
+  m_TargetMesh: {fileID: 4300000, guid: c26b69cd433b5784e98c9855c180f3a4, type: 2}
   m_RebuildOnSplineChange: 1
   m_RebuildFrequency: 1
   m_UpdateColliders: 1
   m_Sides: 8
-  m_SegmentsPerUnit: 4
+  m_SegmentsPerUnit: 1
   m_Capped: 0
   m_Radius: 2
   m_Range: {x: 0, y: 1}
@@ -614,7 +614,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537227096}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: c26b69cd433b5784e98c9855c180f3a4, type: 2}
 --- !u!114 &1537227100
 MonoBehaviour:
   m_ObjectHideFlags: 0
