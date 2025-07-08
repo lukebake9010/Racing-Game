@@ -84,6 +84,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6039744890387099771}
     m_Modifications:
+    - target: {fileID: 2308207377129856338, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308207377129856338, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.97016215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308207377129856338, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308207377129856338, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278253567
+      objectReference: {fileID: 0}
     - target: {fileID: 4177293950107063438, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -166,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7739960509025543501, guid: c71d283a2731ceb41a40717d76b9344c, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: Speedometer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

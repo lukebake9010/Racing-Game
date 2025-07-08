@@ -480,8 +480,8 @@ Material:
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _FlickerSpeed: 1
-    - _FlickerStrength: 0.01
+    - _FlickerSpeed: 0.5
+    - _FlickerStrength: 0.03
     - _GlowInner: 0.05
     - _GlowOffset: 0
     - _GlowOuter: 0.05
@@ -523,7 +523,7 @@ Material:
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.9427508, g: 1, b: 0, a: 1}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
