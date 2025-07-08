@@ -13,7 +13,7 @@ namespace RacingGame.TestCar
         [SerializeField]
         private TextMeshProUGUI speedometerText;
         [SerializeField]
-        private float unitsToMPHMultiplier = 10f;
+        private float mpsToMPHMultiplier = 2.24f;
 
         void Update()
         {
@@ -28,7 +28,7 @@ namespace RacingGame.TestCar
             }
             if (speedometerText == null) return;
 
-            int speedometerReading = (int)(carController.DrivingSpeed * unitsToMPHMultiplier);
+            int speedometerReading = (int)(carController.DrivingSpeed * mpsToMPHMultiplier);
             speedometerText.text = speedometerReading.ToString();
         }
     }

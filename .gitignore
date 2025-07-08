@@ -65,3 +65,6 @@ crashlytics-build.properties
 UserSettings/
 
 .cr/
+
+#fixing binary files from editor
+*.toc

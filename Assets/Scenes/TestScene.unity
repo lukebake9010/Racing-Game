@@ -4555,6 +4555,36 @@ PrefabInstance:
       propertyPath: carController
       value: 
       objectReference: {fileID: 2049437289}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_text
+      value: '0
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_margin.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_margin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_margin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_margin.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_lineSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988893807157884297, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
+      propertyPath: m_characterSpacing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6039744890387099771, guid: ebc7d42ec5c2fe84dab2ab3a266bfa85, type: 3}
       propertyPath: m_Pivot.x
       value: 0
