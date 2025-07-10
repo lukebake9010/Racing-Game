@@ -538,7 +538,7 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.63
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -20.683634, y: 11.157112}
   - {x: -20.825596, y: 10.661477}
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 2
   m_Capped: 0
-  m_Radius: 0.63
+  m_Radius: 0.5
   m_Range: {x: 0, y: 1}
   m_FlipNormals: 0
   m_Shape:
@@ -1114,7 +1114,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 66e5b3baf45f0574f86d804e9d84cf6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2752,7 +2752,7 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.63
+  m_EdgeRadius: 0.5
   m_Points:
   - {x: -16.83972, y: 10.050617}
   - {x: -16.97876, y: 9.565188}
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 2
   m_Capped: 0
-  m_Radius: 0.63
+  m_Radius: 0.5
   m_Range: {x: 0, y: 1}
   m_FlipNormals: 0
   m_Shape:
@@ -3328,7 +3328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 66e5b3baf45f0574f86d804e9d84cf6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
