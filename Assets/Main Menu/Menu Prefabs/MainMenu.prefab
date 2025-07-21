@@ -303,10 +303,10 @@ RectTransform:
   - {fileID: 6325916248098401153}
   m_Father: {fileID: 5695306092261630466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 273.5, y: -174.4}
+  m_SizeDelta: {x: 547, y: 61.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8485303441189375214
 CanvasRenderer:
@@ -391,12 +391,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 662698254533898703}
-        m_TargetAssemblyTypeName: WindowedMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Utilities.UI.WindowedMenuManager, Assembly-CSharp
         m_MethodName: SwitchWindow
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 7088933029909874468}
+          m_ObjectArgumentAssemblyTypeName: Utilities.UI.Window, Assembly-CSharp
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1088,13 +1088,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4015197436553087546}
+  - component: {fileID: 5009204046914085287}
   m_Layer: 5
-  m_Name: Base Menu Wrapper
+  m_Name: Base Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4015197436553087546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1116,6 +1117,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5009204046914085287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3186771032515343356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f2d70ce8f03964ca610966cf7403a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowName: Base
+  OnShowWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3286420448473901964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,10 +1170,10 @@ RectTransform:
   - {fileID: 1588508502419125834}
   m_Father: {fileID: 5695306092261630466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 273.5, y: -102.63999}
+  m_SizeDelta: {x: 547, y: 61.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3557574349087311657
 CanvasRenderer:
@@ -1238,12 +1258,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 662698254533898703}
-        m_TargetAssemblyTypeName: WindowedMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Utilities.UI.WindowedMenuManager, Assembly-CSharp
         m_MethodName: SwitchWindow
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 9073513936597181721}
+          m_ObjectArgumentAssemblyTypeName: Utilities.UI.Window, Assembly-CSharp
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1504,6 +1524,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0be197d09a15445ba055f9d5d2818f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  managedWindows:
+  - {fileID: 5009204046914085287}
+  - {fileID: 9073513936597181721}
+  - {fileID: 7088933029909874468}
+  - {fileID: 955791436861230371}
+  startingWindow: {fileID: 5009204046914085287}
   loadingMenuPrefab: {fileID: 5469692593364606096, guid: e6b0f9eb33771f34aa59edf63d173963, type: 3}
 --- !u!1 &4757912999702751396
 GameObject:
@@ -1539,10 +1565,10 @@ RectTransform:
   - {fileID: 5861248234143349237}
   m_Father: {fileID: 5695306092261630466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 273.5, y: -246.15999}
+  m_SizeDelta: {x: 547, y: 61.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1191852062270144095
 CanvasRenderer:
@@ -1627,12 +1653,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 662698254533898703}
-        m_TargetAssemblyTypeName: WindowedMenuManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Utilities.UI.WindowedMenuManager, Assembly-CSharp
         m_MethodName: SwitchWindow
-        m_Mode: 3
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 955791436861230371}
+          m_ObjectArgumentAssemblyTypeName: Utilities.UI.Window, Assembly-CSharp
           m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1672,10 +1698,10 @@ RectTransform:
   - {fileID: 4207830237092435153}
   m_Father: {fileID: 5695306092261630466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 273.5, y: -30.88}
+  m_SizeDelta: {x: 547, y: 61.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1868502969345647716
 CanvasRenderer:
@@ -1780,15 +1806,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391400387738785249}
+  - component: {fileID: 9073513936597181721}
   - component: {fileID: 4374141332053425466}
   - component: {fileID: 4016902226798546305}
   m_Layer: 5
-  m_Name: Highscores Wrapper
+  m_Name: Highscores Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &391400387738785249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1809,6 +1836,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &9073513936597181721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528312975514030898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f2d70ce8f03964ca610966cf7403a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowName: Highscores
+  OnShowWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!222 &4374141332053425466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1856,15 +1902,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7922203724827978720}
+  - component: {fileID: 955791436861230371}
   - component: {fileID: 2843276410464732430}
   - component: {fileID: 6663959600674781559}
   m_Layer: 5
-  m_Name: Credits Wrapper
+  m_Name: Credits Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7922203724827978720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1885,6 +1932,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &955791436861230371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932271507650447211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f2d70ce8f03964ca610966cf7403a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowName: Credits
+  OnShowWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!222 &2843276410464732430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2475,15 +2541,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1613027842952767274}
+  - component: {fileID: 7088933029909874468}
   - component: {fileID: 7448317028641409158}
   - component: {fileID: 7622875654409041377}
   m_Layer: 5
-  m_Name: Settings Wrapper
+  m_Name: Settings Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1613027842952767274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2504,6 +2571,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7088933029909874468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884755810464387808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f2d70ce8f03964ca610966cf7403a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windowName: Settings
+  OnShowWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHideWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!222 &7448317028641409158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2576,10 +2662,10 @@ RectTransform:
   - {fileID: 3058456446319623807}
   m_Father: {fileID: 5695306092261630466}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 273.5, y: -317.91998}
+  m_SizeDelta: {x: 547, y: 61.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8591775016209456507
 CanvasRenderer:
