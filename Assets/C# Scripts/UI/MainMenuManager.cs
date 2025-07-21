@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utilities.UI;
 
 /// <summary>
 /// Basic Manager class containing functions for the main menu buttons.
@@ -52,6 +53,20 @@ public class MainMenuManager : WindowedMenuManager
             }
             
         }
+    }
+
+    /// <summary>
+    /// Function for Logic for a simple "Quit" button.
+    /// <para>
+    /// Simply exits the application.
+    /// </para>
+    /// </summary>
+    public void Quit()
+    {
+        //DEBUG
+        Debug.Log("Quit button pressed.");
+        //Quits the application
+        Application.Quit();
     }
 
     #endregion
